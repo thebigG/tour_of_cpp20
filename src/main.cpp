@@ -7,10 +7,20 @@
 int main()
 {
 	// Chapter 2 tests
-	Object a{100};
+	Object a{200};
 	VarObject obj{a};
-	std::cout << "Hello World!" << std::endl;
-	std::cout<<"Value of obj1:" << std::get<Object>(obj.var) <<std::endl;
+
+	if (std::holds_alternative<Object>(obj.var))
+	{
+		std::cout<<"Value of obj0:" << std::get<Object>(obj.var) <<std::endl;
+	}
+
+	else if(std::holds_alternative<int>(obj.var))
+	{
+		std::cout<<"Value of obj1:" << std::get<int>(obj.var) <<std::endl;
+	}
+
+	std::visit([](auto&& var){std::cout<<"visit variant:"<<var<<std::endl;}, obj.var);
 	std::cout<<"Value of obj2:" << a <<std::endl;
 	return 0;
 }
