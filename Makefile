@@ -10,7 +10,7 @@ INCLUDES   := -I$(SRC_DIR)
 
 # Target files
 EXE        := $(BIN_DIR)/tour_of_cpp20
-SRC        := $(SRC_DIR)/func.cxx $(SRC_DIR)/func_impl.cxx
+SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/Chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
 MAIN	   := $(SRC_DIR)/main.cpp
 OBJ        := $(SRC:$(SRC_DIR)/%.cxx=$(OBJ_DIR)/%.o)
 
@@ -29,7 +29,7 @@ LD          := g++
 # Target recipes
 $(EXE): $(OBJ)
 
-main: $(OBJ) $(OBJ_DIR)/main.o
+$(OBJ_DIR)/main: $(OBJ) $(OBJ_DIR)/main.o
 	$(LD) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 $(OBJ_DIR)/main.o: $(MAIN)
@@ -42,7 +42,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cxx | $(OBJ_DIR)
 $(OBJ_DIR):
 	mkdir -p $@
 
-all: $(EXE) $(OBJ_DIR)/main.o main
+all: $(EXE) $(OBJ_DIR)/main.o $(OBJ_DIR)/main
 
 clean:
 	@$(RM) -Rf $(BUILD_DIR)
