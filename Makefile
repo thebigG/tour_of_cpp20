@@ -10,7 +10,7 @@ INCLUDES   := -I$(SRC_DIR)
 
 # Target files
 EXE        := $(BIN_DIR)/tour_of_cpp20
-SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/Chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
+SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
 MAIN	   := $(SRC_DIR)/main.cpp
 OBJ        := $(SRC:$(SRC_DIR)/%.cxx=$(OBJ_DIR)/%.o)
 
