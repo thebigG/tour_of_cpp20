@@ -1,2 +1,5 @@
 -std=c++20
 -fmodules-ts
+-fmodules-ts -MMD -MP -std=c++20 -fmessage-length=0
+
+-fmodule-file=%{CurrentProject:Path}/gcm.cache/Chapter3.gcm
