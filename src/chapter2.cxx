@@ -1,28 +1,32 @@
-#include "chapter2.h"
+module;
+#include <variant>
+#include <iostream>
+export module Chapter2;
+export{
+	class Object
+	{
+	public:
+		int objId = 0;
+		Object(int newId);
+		Object(Object& newObj);
+	};
 
-std::basic_ostream<char>& operator<<(std::basic_ostream<char, std::char_traits<char>>& __out, const Object& __s)
-{
-   std::string value{std::to_string(__s.objId)};
-   __out.write(value.c_str(), value.size());
-   return __out;
+	class VarObject
+	{
+	public:
+		VarObject(int newVarVal);
+		VarObject(Object newVarVal);
+		int num;
+		std::variant<Object, int> var;
+	};
+
+	std::basic_ostream<char>& operator<<(std::basic_ostream<char, std::char_traits<char>>& __out, const Object& __s);
+
+
+	std::basic_ostream<char>& operator<<(std::basic_ostream<char, std::char_traits<char>>& __out, const Object& __s)
+	{
+	   std::string value{std::to_string(__s.objId)};
+	   __out.write(value.c_str(), value.size());
+	   return __out;
+	}
 }
-
-Object::Object(int newId): objId{newId}
-{
-}
-
-VarObject::VarObject(int newVarVal): var{newVarVal}
-{
-
-}
-
-VarObject::VarObject(Object newVarVal): var{newVarVal}
-{
-
-}
-
-Object::Object(Object& newObj): objId{newObj.objId}
-{
-
-}
-

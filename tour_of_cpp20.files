@@ -1,7 +1,6 @@
 Makefile
-src/chapter3.cxx
 src/chapter2.cxx
-src/chapter2.h
+src/chapter3.cxx
+src/chapter2_impl.cxx
 src/chapter3_impl.cxx
 src/main.cpp
-gcm.cache/Chapter3.gcm

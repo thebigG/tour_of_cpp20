@@ -8,9 +8,9 @@ OBJ_DIR    := $(BUILD_DIR)/obj
 BIN_DIR    := $(BUILD_DIR)
 INCLUDES   := -I$(SRC_DIR)
 
-# Target files
 EXE        := $(BIN_DIR)/tour_of_cpp20
-SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
+SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/chapter2_impl.cxx $(SRC_DIR)/chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
+
 MAIN	   := $(SRC_DIR)/main.cpp
 OBJ        := $(SRC:$(SRC_DIR)/%.cxx=$(OBJ_DIR)/%.o)
 
@@ -19,6 +19,7 @@ CPPFLAGS    := -fmodules-ts -MMD -MP -std=c++20 -fmessage-length=0 $(INCLUDES)
 CFLAGS      := -Wall -g
 LDFLAGS     := -Llib
 LDLIBS      := -lm
+HD_FLAGS    := -c -std=c++20 -fmodule-header
 
 # Set tools
 CC          := g++
@@ -30,19 +31,28 @@ LD          := g++
 $(EXE): $(OBJ)
 
 $(OBJ_DIR)/main: $(OBJ) $(OBJ_DIR)/main.o
-	$(LD) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
+		$(LD) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+#$(OBJ_DIR)/main: $(OBJ_DIR)/main.o
+#	$(LD) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 $(OBJ_DIR)/main.o: $(MAIN)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+		$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cxx | $(OBJ_DIR)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+		$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	mkdir -p $@
 
 all: $(EXE) $(OBJ_DIR)/main.o $(OBJ_DIR)/main
+
+run:
+	@$(OBJ_DIR)/main
+
+clean-modules:
+	@rm -r gcm.cache
 
 clean:
 	@$(RM) -Rf $(BUILD_DIR)
