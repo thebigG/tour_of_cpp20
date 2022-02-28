@@ -14,7 +14,11 @@ int main()
 	VarObject obj{a};
 
 	func();
-//	MyVector<int> items{};
+	Vector_CPP20<float> items{};
+
+	items[0] = 12;
+
+	std::cout<<"first elem:"<<items[0]<< std::endl;
 
 	if (std::holds_alternative<Object>(obj.var))
 	{
