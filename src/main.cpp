@@ -14,6 +14,7 @@ int main()
 	VarObject obj{a};
 
 	func();
+//	MyVector<int> items{};
 
 	if (std::holds_alternative<Object>(obj.var))
 	{
