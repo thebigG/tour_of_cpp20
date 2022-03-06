@@ -16,9 +16,9 @@ int main()
 	func();
 	Vector_CPP20<float> items{};
 
-	items[0] = 12;
+	items[15] = 1045;
 
-	std::cout<<"first elem:"<<items[0]<< std::endl;
+	std::cout<<"Last elem:"<<items[15]<< std::endl;
 
 	if (std::holds_alternative<Object>(obj.var))
 	{
