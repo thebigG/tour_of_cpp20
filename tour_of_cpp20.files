@@ -3,4 +3,6 @@ src/chapter2.cxx
 src/chapter3.cxx
 src/chapter2_impl.cxx
 src/chapter3_impl.cxx
+src/chapter4.cxx
+src/chapter4_impl.cxx
 src/main.cpp

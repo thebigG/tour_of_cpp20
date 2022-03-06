@@ -9,7 +9,7 @@ BIN_DIR    := $(BUILD_DIR)
 INCLUDES   := -I$(SRC_DIR)
 
 EXE        := $(BIN_DIR)/tour_of_cpp20
-SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/chapter2_impl.cxx $(SRC_DIR)/chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx
+SRC        := $(SRC_DIR)/chapter2.cxx $(SRC_DIR)/chapter2_impl.cxx $(SRC_DIR)/chapter3.cxx $(SRC_DIR)/chapter3_impl.cxx $(SRC_DIR)/chapter4.cxx $(SRC_DIR)/chapter4_impl.cxx
 
 MAIN	   := $(SRC_DIR)/main.cpp
 OBJ        := $(SRC:$(SRC_DIR)/%.cxx=$(OBJ_DIR)/%.o)
