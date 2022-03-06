@@ -30,6 +30,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+    - name: Check Coding Style
+      run: |
+        ./check-clang-format.sh
     - name: make
       run:  |
         make all

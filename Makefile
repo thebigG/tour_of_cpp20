@@ -51,6 +51,12 @@ all: $(EXE) $(OBJ_DIR)/main.o $(OBJ_DIR)/main
 run:
 	@$(OBJ_DIR)/main
 
+check-format:
+	@bash ./check-clang-format.sh
+
+format:
+	@bash ./clang-format.sh
+
 clean-modules:
 	@rm -r gcm.cache
 
