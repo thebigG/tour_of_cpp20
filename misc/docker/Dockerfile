@@ -5,4 +5,7 @@ RUN apt-get update && apt-get install -y g++-11 \
                                          git \
                                          make \
                                          build-essential \
-                                         clang-format
+                                         clang-format \
+                                         cmake 
+
+
