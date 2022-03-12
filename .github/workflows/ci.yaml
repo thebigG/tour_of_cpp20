@@ -33,9 +33,12 @@ jobs:
     - name: Check Coding Style
       run: |
         ./check-clang-format.sh
-    - name: make
+    - name: Build
       run:  |
-        make all
+        mkdir build
+        cd build
+        cmake ..
+        make
 
   build-container-linux:
     strategy:
