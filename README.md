@@ -7,6 +7,8 @@ Exploring `C++20` and using [Tour Of C++](https://www.stroustrup.com/tour2.html)
 docker pull thebigg1/cpp20-linux:latest
 docker run -it thebigg1/cpp20-linux:latest bash
 git clone https://github.com/thebigG/tour_of_cpp20.git
-make all
-make run #This executes main
+mkdir build
+cmake ..
+make
+./tour_of_cpp20
 ```
