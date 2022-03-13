@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y g++-11 \
                                          make \
                                          build-essential \
                                          clang-format \
-                                         cmake 
+                                         cmake \
+                                         valgrind
 
 
