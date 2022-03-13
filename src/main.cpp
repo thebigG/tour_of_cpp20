@@ -2,6 +2,7 @@
 #include <string>
 #include <utility>
 #include <variant>
+#include <vector>
 
 import Chapter3;
 import Chapter2;
@@ -12,11 +13,11 @@ int main() {
   VarObject obj{a};
 
   func();
-  Vector_CPP20<float> items{};
+  Vector_CPP20<double> items{4,  8, 16, 4,  8, 16, 4,  8,
+                             16, 4, 8,  16, 4, 8,  16, 7};
 
-  items[15] = 1045;
-
-  std::cout << "Last elem:" << items[15] << std::endl;
+  // items.pushBack(15.1);
+  std::cout << "front of vector:" << items.front() << std::endl;
 
   if (std::holds_alternative<Object>(obj.var)) {
     std::cout << "Value of obj0:" << std::get<Object>(obj.var) << std::endl;

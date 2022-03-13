@@ -1,5 +1,7 @@
 module;
+#include <cstdint>
 #include <exception>
+#include <initializer_list>
 #include <iostream>
 export module Chapter3;
 
@@ -18,20 +20,61 @@ class Vector_CPP20 {
   // at the moment how to separate the interface from implementation in GCC 11.2
   // when working with templates and modules.
   Vector_CPP20() {
-    elements = new T[MIN_SIZE];
-    size = MIN_SIZE;
+    elements = new T[MIN_CAPACITY];
+    size = 0;
+    capacity = MIN_CAPACITY;
+  }
+  Vector_CPP20(std::initializer_list<T> list) {
+    elements = new T[MIN_CAPACITY];
+    size = 0;
+    capacity = MIN_CAPACITY;
+    for (auto& item : list) {
+      pushBack(item);
+    }
+  }
+
+  void pushBack(T& newElement) {
+    validateRange(size);
+    elements[size] = newElement;
+    ++size;
+  }
+
+  void pushBack(T newElement) {
+    validateRange(size);
+    elements[size] = newElement;
+    ++size;
+  }
+
+  T back() {
+    validateRange(capacity);
+    return elements[capacity - 1];
+  }
+  T front() {
+    if (size == 0) {
+      validateRange(size);
+      return elements[size];
+    } else {
+      validateRange(size - 1);
+      return elements[size - 1];
+    }
   }
   ~Vector_CPP20() { delete[] elements; }
 
-  T& operator[](int i) {
-    if (i >= size || i < 0) {
+  void validateRange(int i) {
+    if (i >= capacity || i < 0) {
       throw OutOfRangeException{};
     }
+  }
+
+  T& operator[](int i) {
+    validateRange(i);
+
     return elements[i];
   }
 
  private:
   T* elements;
-  const int MIN_SIZE = 16;
-  int size;
+  const int MIN_CAPACITY = 16;
+  int32_t size;
+  int32_t capacity;
 };
