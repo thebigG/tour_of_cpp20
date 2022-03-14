@@ -1,6 +1,6 @@
 export module Chapter2;
-import <iostream>;
-import <variant>;
+import<iostream>;
+import<variant>;
 export {
   class Object {
    public:
@@ -17,15 +17,15 @@ export {
     std::variant<Object, int> var;
   };
 
-//  std::basic_ostream<char>& operator<<(
-//      std::basic_ostream<char, std::char_traits<char>>& __out,
-//      const Object& __s);
+  //  std::basic_ostream<char>& operator<<(
+  //      std::basic_ostream<char, std::char_traits<char>>& __out,
+  //      const Object& __s);
 
-//  std::basic_ostream<char>& operator<<(
-//      std::basic_ostream<char, std::char_traits<char>>& __out,
-//      const Object& __s) {
-//    std::string value{std::to_string(__s.objId)};
-//    __out.write(value.c_str(), value.size());
-//    return __out;
-//  }
+  //  std::basic_ostream<char>& operator<<(
+  //      std::basic_ostream<char, std::char_traits<char>>& __out,
+  //      const Object& __s) {
+  //    std::string value{std::to_string(__s.objId)};
+  //    __out.write(value.c_str(), value.size());
+  //    return __out;
+  //  }
 }
