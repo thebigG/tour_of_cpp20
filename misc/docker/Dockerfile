@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y g++-11 \
                                          build-essential \
                                          clang-format \
                                          cmake \
-                                         valgrind
+                                         valgrind \
+                                         vim
 
 
