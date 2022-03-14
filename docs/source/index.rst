@@ -7,8 +7,9 @@ Welcome to tour_of_cpp20's documentation!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+
+   modules
 
 
 
