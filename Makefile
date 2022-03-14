@@ -51,6 +51,15 @@ all: $(EXE) $(OBJ_DIR)/main.o $(OBJ_DIR)/main
 run:
 	@$(OBJ_DIR)/main
 
+stl_modules:
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header iostream
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header variant
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header utility
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header string
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header cstdint
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header exception
+	@g++ -std=c++20 -fmodules-ts -xc++-system-header initializer_list
+
 check-format:
 	@bash ./check-clang-format.sh
 

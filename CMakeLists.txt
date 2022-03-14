@@ -18,7 +18,6 @@ string(CONCAT CMAKE_EXPERIMENTAL_CXX_SCANDEP_SOURCE
   " ${flags_to_scan_deps} -fdep-file=<DYNDEP_FILE> -fdep-output=<OBJECT>"
   )
 
-
 set(MODULE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2_impl.cxx
@@ -28,6 +27,6 @@ set(MODULE_SOURCES
 
 add_library(modules ${MODULE_SOURCES})
 add_executable(tour_of_cpp20 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-
+set_property(TARGET tour_of_cpp20 PROPERTY INTERPROCEDURAL_OPTIMIZATION FALSE)
 target_link_libraries(tour_of_cpp20 modules)
 

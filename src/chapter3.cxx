@@ -1,9 +1,8 @@
-module;
-#include <cstdint>
-#include <exception>
-#include <initializer_list>
-#include <iostream>
 export module Chapter3;
+import <cstdint>;
+import <exception>;
+import <initializer_list>;
+import <iostream>;
 
 export void func();
 // export class OutOfRangeException;
@@ -58,7 +57,7 @@ class Vector_CPP20 {
       return elements[size - 1];
     }
   }
-  ~Vector_CPP20() { delete[] elements; }
+//  ~Vector_CPP20() { delete[] elements; }
 
   void validateRange(int i) {
     if (i >= capacity || i < 0) {
