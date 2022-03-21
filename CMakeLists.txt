@@ -24,6 +24,8 @@ set(MODULE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2_impl.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter3.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter3_impl.cxx
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4.cxx
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4_impl.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 add_library(modules ${MODULE_SOURCES})
