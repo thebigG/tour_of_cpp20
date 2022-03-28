@@ -22,10 +22,7 @@ string(CONCAT CMAKE_EXPERIMENTAL_CXX_SCANDEP_SOURCE
 set(MODULE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2_impl.cxx
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter3.cxx
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter3_impl.cxx
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4.cxx
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4_impl.cxx
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 add_library(modules ${MODULE_SOURCES})
