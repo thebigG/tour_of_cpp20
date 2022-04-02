@@ -4,22 +4,12 @@
 #include <variant>
 #include <vector>
 
-//#include "chapter2.h"
-// import Chapter3;
-import Chapter2;
-
-// class VarObject {
-//  public:
-////    VarObject(int newVarVal);
-////    VarObject(Object newVarVal);
-//  int num;
-//  std::variant<int, std::string> x = "some_str";
-//};
+#include "chapter2.h"
 
 int main() {
   // Chapter 2 tests
-  //  Object a{200};
-  //  VarObject obj{a};
+  Object a{200};
+  VarObject obj{a};
 
   //  func();
   //  Vector_CPP20<double> items{4,  8, 16, 4,  8, 16, 4,  8,
@@ -44,5 +34,6 @@ int main() {
   //  std::variant<int, std::string> var = "Var";
 
   std::string str{"Hello"};
+  std::cout << str << std::endl;
   return 0;
 }

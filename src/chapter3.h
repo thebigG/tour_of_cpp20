@@ -1,19 +1,16 @@
-module;
 #include <cstdint>
 #include <exception>
 #include <initializer_list>
 #include <iostream>
-export module Chapter3;
 
-export void func();
 // export class OutOfRangeException;
-export class OutOfRangeException : public std::exception {
+class OutOfRangeException : public std::exception {
  public:
   virtual ~OutOfRangeException(){};
   const char* what() const throw();
 };
 
-export template <typename T>
+template <typename T>
 class Vector_CPP20 {
  public:
   // Implementations are defined here because I can't figure out a way
