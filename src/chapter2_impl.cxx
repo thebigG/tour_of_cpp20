@@ -1,8 +1,8 @@
-module;
 // Any includes you want go here
 #include <iostream>
 #include <variant>
-module Chapter2;
+
+#include "chapter2.h"
 std::basic_ostream<char>& operator<<(
     std::basic_ostream<char, std::char_traits<char>>& __out,
     const Object& __s) {

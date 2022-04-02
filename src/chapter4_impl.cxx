@@ -1,4 +1,4 @@
-module Chapter4;
+#include "chapter4.h"
 
 Complex::Complex(double newReal, double newImaginary)
     : real{newReal}, imaginary{newImaginary} {}
