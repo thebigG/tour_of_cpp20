@@ -30,7 +30,7 @@ set(MODULE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter2.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
-#I knwo this is weird, but it'd make the transition back to modules a lot
+#I know this is weird, but it'd make the transition back to modules a lot
 #easier.
 add_library(modules ${MODULE_SOURCES})
 add_executable(tour_of_cpp20 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
