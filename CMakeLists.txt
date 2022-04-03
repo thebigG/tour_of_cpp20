@@ -22,6 +22,8 @@ add_compile_options(
 
 
 set(MODULE_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter5.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter5_impl.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter4_impl.cxx
     ${CMAKE_CURRENT_SOURCE_DIR}/src/chapter3.h
