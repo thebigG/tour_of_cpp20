@@ -43,10 +43,6 @@ class Vector_CPP20 {
   }
 
   T back() {
-    validateRange(capacity);
-    return elements[capacity - 1];
-  }
-  T front() {
     if (size == 0) {
       validateRange(size);
       return elements[size];
@@ -54,6 +50,10 @@ class Vector_CPP20 {
       validateRange(size - 1);
       return elements[size - 1];
     }
+  }
+  T front() {
+    validateRange(capacity - 1);
+    return elements[0];
   }
   ~Vector_CPP20() { delete[] elements; }
 
@@ -68,6 +68,8 @@ class Vector_CPP20 {
 
     return elements[i];
   }
+
+  int32_t getSize() { return size; }
 
  private:
   T* elements;
