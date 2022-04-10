@@ -13,4 +13,5 @@ cd build
 cmake ..
 make
 ./tour_of_cpp20
+./tests/test
 ```
