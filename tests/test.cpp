@@ -10,21 +10,17 @@
 #include "chapter4.h"
 #include "chapter5.h"
 
-TEST_CASE("1: All test cases reside in other .cpp files (empty)",
-          "[multi-file:1]") {}
-
-TEST_CASE("Factorial of 0 is 1 (fail)", "[single-file]") {
+TEST_CASE("Tests for Chapter2", "[Chapter2]") {
   Object a{200};
   VarObject obj{a};
-  Vector_CPP20<double> items{4,  8, 16, 4,  8, 16, 4,  8,
-                             16, 4, 8,  16, 4, 8,  16, 7};
+  REQUIRE(true == std::holds_alternative<Object>(obj.var));
+  REQUIRE(200 == std::get<Object>(obj.var).objId);
+}
 
-  // items.pushBack(15.1);
-  std::cout << "front of vector:" << items.front() << std::endl;
+TEST_CASE("Tests for Chapter3", "[Chapter3]") {
+  Vector_CPP20<double> items{4, 8, 16, 4, 8, 16, 4, 8, 16};
 
-  if (std::holds_alternative<Object>(obj.var)) {
-    std::cout << "Value of obj0:" << std::get<Object>(obj.var) << std::endl;
-
-    REQUIRE(std::get<Object>(obj.var).objId == 200);
-  }
+  REQUIRE(4 == items.front());
+  REQUIRE(16 == items.back());
+  REQUIRE(9 == items.getSize());
 }
