@@ -37,5 +37,7 @@ set(MODULE_SOURCES
 add_library(modules ${MODULE_SOURCES})
 add_executable(tour_of_cpp20 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
+
+add_subdirectory(tests)
 target_link_libraries(tour_of_cpp20 modules)
 

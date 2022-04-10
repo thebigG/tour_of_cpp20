@@ -39,6 +39,10 @@ jobs:
         cd build
         cmake ..
         make
+    - name: Run Tests
+      run: |
+        cd build
+        ./tests/test
 
   build-container-linux:
     strategy:
