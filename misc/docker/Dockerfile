@@ -10,4 +10,9 @@ RUN apt-get update && apt-get install -y g++-11 \
                                          valgrind \
                                          vim
 
+RUN git clone https://github.com/thebigG/Catch2.git
+RUN cd Catch2 \
+    && cmake -Bbuild -H. -DBUILD_TESTING=OFF  \
+    && cmake --build build/ --target install
+RUN rm -r Catch2
 
