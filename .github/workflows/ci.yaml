@@ -44,7 +44,7 @@ jobs:
       run: |
         cd tests/build
         lcov -c -i -b modules/ -d modules/ -o Coverage.baseline
-        ./tests/test
+        ./test
         lcov -c -d . -b modules -o Coverage.out
         lcov -a Coverage.baseline -a Coverage.out -o Coverage.combined
         genhtml Coverage.combined -o HTML
