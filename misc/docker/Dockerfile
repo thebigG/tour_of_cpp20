@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y g++-11 \
                                          clang-format \
                                          cmake \
                                          valgrind \
-                                         vim
+                                         vim \
+                                         lcov
 
 RUN git clone https://github.com/thebigG/Catch2.git
 RUN cd Catch2 \
