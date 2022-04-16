@@ -49,6 +49,12 @@ jobs:
         lcov -a Coverage.baseline -a Coverage.out -o Coverage.combined
         genhtml Coverage.combined -o HTML
 
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: "tests/build/Coverage.combined"
+
 
   build-container-linux:
     strategy:
