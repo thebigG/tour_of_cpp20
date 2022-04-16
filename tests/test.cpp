@@ -15,6 +15,7 @@ TEST_CASE("Tests for Chapter2", "[Chapter2]") {
   VarObject obj{a};
   REQUIRE(true == std::holds_alternative<Object>(obj.var));
   REQUIRE(200 == std::get<Object>(obj.var).objId);
+  std::cout << "Value of obj0:" << std::get<Object>(obj.var) << std::endl;
 }
 
 TEST_CASE("Tests for Chapter3", "[Chapter3]") {
