@@ -47,6 +47,7 @@ jobs:
         ./test
         lcov -c -d . -b modules -o Coverage.out
         lcov -a Coverage.baseline -a Coverage.out -o Coverage.combined
+        lcov -r Coverage.combined /usr/include/\* -o Coverage.combined
         genhtml Coverage.combined -o HTML
 
     - name: Coveralls
