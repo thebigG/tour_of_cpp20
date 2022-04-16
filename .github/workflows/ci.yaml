@@ -35,14 +35,20 @@ jobs:
         ./check-clang-format.sh
     - name: Build
       run:  |
+        cd tests
         mkdir build
         cd build
         cmake ..
         make
-    - name: Run Tests
+    - name: Run Tests And Generate Coverage
       run: |
-        cd build
+        cd tests/build
+        lcov -c -i -b modules/ -d modules/ -o Coverage.baseline
         ./tests/test
+        lcov -c -d . -b modules -o Coverage.out
+        lcov -a Coverage.baseline -a Coverage.out -o Coverage.combined
+        genhtml Coverage.combined -o HTML
+
 
   build-container-linux:
     strategy:

@@ -8,10 +8,19 @@ set(CMAKE_BUILD_TYPE Debug)
 
 add_compile_options(
     -std=c++20
+    --coverage
+    -fno-inline
+    -fno-inline-small-functions
+    -fno-default-inline
+    -O0
     #Uncomment this to use modules
     #-fmodules-ts
 )
 
+set(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
+set(GCC_COVERAGE_LINK_FLAGS    "-lgcov")
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
+set(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
 #Uncomment this to use modules
 #set(CMAKE_EXPERIMENTAL_CXX_MODULE_DYNDEP 1)
 #string(CONCAT CMAKE_EXPERIMENTAL_CXX_SCANDEP_SOURCE
@@ -36,8 +45,6 @@ set(MODULE_SOURCES
 #easier.
 add_library(modules ${MODULE_SOURCES})
 add_executable(tour_of_cpp20 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-
-
-add_subdirectory(tests)
-target_link_libraries(tour_of_cpp20 modules)
+target_link_libraries(tour_of_cpp20 modules gcov)
+#add_subdirectory(tests)
 
