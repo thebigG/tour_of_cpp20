@@ -12,6 +12,7 @@ add_compile_options(
     -fno-inline
     -fno-inline-small-functions
     -fno-default-inline
+    -fkeep-inline-functions
     -O0
     #Uncomment this to use modules
     #-fmodules-ts

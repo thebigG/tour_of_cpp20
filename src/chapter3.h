@@ -13,9 +13,6 @@ class OutOfRangeException : public std::exception {
 template <typename T>
 class Vector_CPP20 {
  public:
-  // Implementations are defined here because I can't figure out a way
-  // at the moment how to separate the interface from implementation in GCC 11.2
-  // when working with templates and modules.
   Vector_CPP20() {
     elements = new T[MIN_CAPACITY];
     size = 0;
