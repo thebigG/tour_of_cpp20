@@ -4,11 +4,11 @@
 #include <iostream>
 
 // export class OutOfRangeException;
-class OutOfRangeException : public std::exception {
- public:
-  virtual ~OutOfRangeException(){};
-  const char* what() const throw();
-};
+// class OutOfRangeException : public std::exception {
+// public:
+//  virtual ~OutOfRangeException(){};
+//  const char* what() const throw();
+//};
 
 template <typename T>
 class Vector_CPP20 {
@@ -56,7 +56,7 @@ class Vector_CPP20 {
 
   void validateRange(int i) {
     if (i >= capacity || i < 0) {
-      throw OutOfRangeException{};
+      //      throw OutOfRangeException{};
     }
   }
 
