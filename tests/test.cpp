@@ -55,3 +55,21 @@ TEST_CASE("Tests for Chapter4", "[Chapter4]") {
   REQUIRE(3 == complex.getReal());
   REQUIRE(3 == complex.getImaginary());
 }
+
+TEST_CASE("Tests for Chapter5", "[Chapter5]") {
+  auto p1 = Player{1};
+
+  REQUIRE(1 == p1.getId());
+  REQUIRE(p1.hasBlob());
+  REQUIRE(1 == p1.getHealth());
+  p1.setHealth(0.5);
+  REQUIRE(0.5 == p1.getHealth());
+
+  auto p2 = Player{std::move(p1)};
+  REQUIRE(!p1.hasBlob());
+  REQUIRE(1 == p2.getId());
+  p2.setId(2);
+  REQUIRE(2 == p2.getId());
+
+  auto p3{p2};
+}
