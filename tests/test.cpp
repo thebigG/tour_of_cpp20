@@ -1,5 +1,4 @@
 #include <catch2/catch_test_macros.hpp>
-#include <iostream>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -70,6 +69,12 @@ TEST_CASE("Tests for Chapter5", "[Chapter5]") {
   REQUIRE(1 == p2.getId());
   p2.setId(2);
   REQUIRE(2 == p2.getId());
-
   auto p3{p2};
+  REQUIRE(p3.getId() == p2.getId());
+  REQUIRE(p2.hasBlob());
+  REQUIRE(p3.hasBlob());
+  p1 = p2;
+  REQUIRE(p1.getId() == p2.getId());
+  p2 = std::move(p1);
+  REQUIRE(!p1.hasBlob());
 }

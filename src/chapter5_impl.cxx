@@ -24,6 +24,7 @@ Player::Player(Player&& otherPlayer) {
 }
 
 Player& Player::operator=(const Player& otherPlayer) {
+  this->blob = std::make_unique<Blob>();
   this->health = otherPlayer.health;
   this->id = otherPlayer.id;
   blob->value = otherPlayer.blob->value;
@@ -39,7 +40,6 @@ Player& Player::operator=(Player&& otherPlayer) {
   this->blob = std::move(otherPlayer.blob);
   return *this;
 }  // move assignment
-
 float Player::getHealth() const { return health; }
 
 void Player::setHealth(float newHealth) { health = newHealth; }
