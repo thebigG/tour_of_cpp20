@@ -9,6 +9,7 @@
 #include "chapter3.h"
 #include "chapter4.h"
 #include "chapter5.h"
+#include "chapter6.h"
 
 TEST_CASE("Tests for Chapter2", "[Chapter2]") {
   Object a{200};
@@ -57,7 +58,6 @@ TEST_CASE("Tests for Chapter4", "[Chapter4]") {
 
 TEST_CASE("Tests for Chapter5", "[Chapter5]") {
   auto p1 = Player{1};
-
   REQUIRE(1 == p1.getId());
   REQUIRE(p1.hasBlob());
   REQUIRE(1 == p1.getHealth());
@@ -69,6 +69,7 @@ TEST_CASE("Tests for Chapter5", "[Chapter5]") {
   REQUIRE(1 == p2.getId());
   p2.setId(2);
   REQUIRE(2 == p2.getId());
+
   auto p3{p2};
   REQUIRE(p3.getId() == p2.getId());
   REQUIRE(p2.hasBlob());
@@ -77,4 +78,13 @@ TEST_CASE("Tests for Chapter5", "[Chapter5]") {
   REQUIRE(p1.getId() == p2.getId());
   p2 = std::move(p1);
   REQUIRE(!p1.hasBlob());
+}
+
+TEST_CASE("Tests for Chapter6", "[Chapter6]") {
+  GreaterThan gt_10{10};
+  auto n = 5;
+  REQUIRE_FALSE(gt_10(n));
+
+  n = 11;
+  REQUIRE(gt_10(n));
 }
