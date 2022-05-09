@@ -10,6 +10,7 @@
 #include "chapter4.h"
 #include "chapter5.h"
 #include "chapter6.h"
+#include "chapter7.h"
 
 TEST_CASE("Tests for Chapter2", "[Chapter2]") {
   Object a{200};
@@ -87,4 +88,13 @@ TEST_CASE("Tests for Chapter6", "[Chapter6]") {
 
   n = 11;
   REQUIRE(gt_10(n));
+}
+
+TEST_CASE("Tests for Chapter7", "[Chapter7]") {
+  //  GreaterThan gt2_10{std::string{"10"}};
+  //  std::string n = {"5s"};
+  //  REQUIRE_FALSE(gt2_10(n));
+
+  ////  n = 11;
+  ////  REQUIRE(gt2_10(n));
 }
