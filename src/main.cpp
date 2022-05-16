@@ -8,6 +8,7 @@
 #include "chapter3.h"
 #include "chapter4.h"
 #include "chapter5.h"
+#include "chapter7.h"
 
 int main() {
   // Chapter 2 tests

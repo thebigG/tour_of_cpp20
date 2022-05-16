@@ -91,10 +91,6 @@ TEST_CASE("Tests for Chapter6", "[Chapter6]") {
 }
 
 TEST_CASE("Tests for Chapter7", "[Chapter7]") {
-  //  GreaterThan gt2_10{std::string{"10"}};
-  //  std::string n = {"5s"};
-  //  REQUIRE_FALSE(gt2_10(n));
-
-  ////  n = 11;
-  ////  REQUIRE(gt2_10(n));
+  GreaterThanNum gt_10{0};
+  REQUIRE_FALSE(gt_10(0));
 }
