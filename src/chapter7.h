@@ -2,6 +2,7 @@
 #define CHAPTER7_H
 
 #include <concepts>
+#include <iostream>
 
 template <typename T>
 concept Comparable = requires(T a, T b) {
@@ -45,5 +46,11 @@ class GreaterThanNum {
   GreaterThanNum(const T& v) : val{v} {};
   bool operator()(const T& x) const { return x > val; };
 };
+
+template <typename... T>
+void write_to_stream(std::ostringstream& stream, T... items) {
+  // Fold our args
+  (stream << ... << items);
+}
 
 #endif  // CHAPTER7_H

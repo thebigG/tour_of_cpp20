@@ -1,4 +1,9 @@
+#include <cmath>
+#include <iomanip>
 #include <iostream>
+#include <map>
+#include <random>
+#include <sstream>
 #include <string>
 #include <utility>
 #include <variant>
