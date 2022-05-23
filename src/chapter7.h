@@ -35,6 +35,11 @@ concept Number = requires(T a, T b) {
       Multipliable<T>;
 };
 
+template <typename T>
+concept Primitive = requires(T a, T b) {
+  Number<T>;
+};
+
 // Same as GreaterThan in Chapter6 except that here we enforce the concept of
 // "Number" at compile time
 template <typename T>
@@ -47,8 +52,8 @@ class GreaterThanNum {
   bool operator()(const T& x) const { return x > val; };
 };
 
-template <typename... T>
-void write_to_stream(std::ostringstream& stream, T... items) {
+template <typename... T, typename U>
+void write_to_stream(std::basic_ostream<U>& stream, T... items) {
   // Fold our args
   (stream << ... << items);
 }

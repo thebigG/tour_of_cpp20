@@ -94,6 +94,7 @@ TEST_CASE("Tests for Chapter7", "[Chapter7]") {
   GreaterThanNum gt_10{0};
   REQUIRE_FALSE(gt_10(0));
 
+  // TODO: It might be worth it testing this with a file...?
   std::ostringstream str_stream{};
   write_to_stream(str_stream, 4, 8, 16);
   REQUIRE("4816" == str_stream.str());
