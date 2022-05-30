@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <filesystem>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -98,4 +99,10 @@ TEST_CASE("Tests for Chapter7", "[Chapter7]") {
   std::ostringstream str_stream{};
   write_to_stream(str_stream, 4, 8, 16);
   REQUIRE("4816" == str_stream.str());
+}
+
+TEST_CASE("Tests for Chapter10", "[Chapter10]") {
+  std::filesystem::path p{"../data/test_file.txt"};
+
+  REQUIRE(std::filesystem::exists(p));
 }
