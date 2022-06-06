@@ -1,5 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 #include <filesystem>
+#include <fstream>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -103,6 +104,12 @@ TEST_CASE("Tests for Chapter7", "[Chapter7]") {
 
 TEST_CASE("Tests for Chapter10", "[Chapter10]") {
   std::filesystem::path p{"../data/test_file.txt"};
-
   REQUIRE(std::filesystem::exists(p));
+
+  std::ifstream input_file(std::filesystem::absolute(p).c_str(),
+                           std::ios_base::binary);
+  std::stringstream file_data{};
+  file_data << input_file.rdbuf();
+
+  REQUIRE("Hello world!\n" == file_data.str());
 }
